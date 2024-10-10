@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: nginx-deployment
 spec:
-  replicas: 3
+  replicas: 4
   selector:
     matchLabels:
       app: nginx
@@ -13,13 +13,12 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
-        volumeMounts:
-        - name: nginx-config-volume
-          mountPath: /usr/share/nginx/html
+        - name: nginx
+          image: nginx:latest
+          volumeMounts:
+            - name: nginx-config-volume
+              mountPath: /usr/share/nginx/html
       volumes:
-      - name: nginx-config-volume
-        configMap:
-          name: nginx-config
-
+        - name: nginx-config-volume
+          configMap:
+            name: nginx-config
