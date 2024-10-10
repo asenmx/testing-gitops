@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: celery-config
+data:
+  PATH: "/home/pyuser/.local/bin"
+  PIP_DISABLE_PIP_VERSION_CHECK: "1"
+  PYTHONDONTWRITEBYTECODE: "1"
+  PYTHONUNBUFFERED: "1"
+  DATABASE_HOST: "vikara-dev-db.aiidatapro.net"
+  DATABASE_PORT: "5432"
+  DATABASE_USER: "postgres"
+  DATABASE_NAME: "vik_dev_db"
+  ES_HOST: "10.3.21.6,10.3.21.7,10.3.21.8"
+  ES_USER: "mlp_apps"
+  ES_CAFILE: "cert/elasticsearch-ca.pem"
+  RECIPIENTS_MAILS: '["ut_results_vik@adata.pro"]'
+  SMTP_SERVER: "smtp-relay.gmail.com"
+  SMTP_PORT: "25"
+  SENDER_EMAIL: "noreplay@adata.net"
+  HELO_NAME: "adata.pro"
+  SOURCE_ADDRESS: "('195.47.193.81', 0)"
+  RUN_ALERTS: "True"
+  APP_URL: "https://testvicara.aiidatapro.net"
+  REDIS_HOST: "redis://vikara-redis-dev.default.svc.cluster.local:6379/0"
+  INDEX_PATTERN_CRAWLER_ITEMS: "crawler_items_*"
+  CONNECTION_TIMEOUT: "120"
